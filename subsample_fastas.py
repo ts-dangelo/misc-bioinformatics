@@ -32,7 +32,7 @@ for faa in fpaths:
 	hdr_list = []
 	with open(clean_out, "w") as outfile:
 		for seq_record in SeqIO.parse(faa, "fasta"):
-      hdr = seq_record.id
+      			hdr = seq_record.id
 			hdr_list.append(hdr)
 		rsub = sample(hdr_list,nseq)
 		for seq_record in SeqIO.parse(faa, "fasta"):
