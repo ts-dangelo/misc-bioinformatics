@@ -1,3 +1,10 @@
+'''
+For some perplexing reason, there is no way to download individual IMG produced bins from the website. You can only download the underlying assembled data
+and then a file that summarizes which contigs (or scaffolds?) within the assembled .fna file belongs to each bin, which is pretty useless for most applications.
+This script takes the .fna file containing all bins and the scaffoldsets_DATE-OF-DOWNLOAD.tab file and splits the one fasta into fastas for the individual bins.
+'''
+
+
 import sys, os.path
 from collections import defaultdict
 import glob
@@ -6,9 +13,9 @@ from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 import argparse
 
-parser = argparse.ArgumentParser(description="Split up IMG bin dumps into individual fastas")
+parser = argparse.ArgumentParser(description="Split up IMG 'scaffold-sets' from metagenomic data into the bins.")
 parser.add_argument('-fasta', help="Fasta file with mixed contigs from multiple bins")
-parser.add_argument('-list', help="IMG contig to bin summary table")
+parser.add_argument('-list', help="IMG contig to bin summary file. From IMG is has the name scaffoldsets_DATE-OF-DOWNLOAD.tab")
 
 args = parser.parse_args()
 arg_dict = vars(args)
