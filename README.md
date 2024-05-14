@@ -1,2 +1,2 @@
 # misc-bioinformatics
-Python scripts or miscellaneous tasks 
+Python scripts for miscellaneous tasks 
